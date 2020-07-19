@@ -1,0 +1,142 @@
+.slick-list {
+    .slick-track {
+        float: left;
+    }
+}
+
+.slick-dotted {
+    &.slick-slider {
+        margin-bottom: 0;
+    }
+}
+
+.slick-prev,
+.slick-next {
+    z-index: 1;
+
+    &:before {
+        font-family: 'Line Awesome Free';
+        font-size: 14px;
+        font-weight: 900;
+        color: $color-gray-dark;
+        opacity: 1;
+        transition: $transition-default;
+    }
+
+    &:hover {
+        &:before {
+            @include themify {
+                color: themed('primary');
+            }
+        }
+    }
+}
+
+.slick-prev:before {
+    content: '\f104';
+}
+
+.slick-next:before {
+    content: '\f105';
+}
+
+.rtl {
+    .slick-prev:before {
+        content: '\f105';
+    }
+
+    .slick-next:before {
+        content: '\f104';
+    }
+}
+
+.slick-lightbox {
+    .slick-prev,
+    .slick-next {
+        &:before {
+            font-size: 24px;
+        }
+    }
+
+    .slick-lightbox-close {
+        right: 13px;
+
+        &:before {
+            font-family: 'Line Awesome Free';
+            font-weight: 900;
+            font-size: 20px;
+            content: '\f00d';
+            transition: $transition-default;
+        }
+
+        &:hover {
+            &:before {
+                @include themify {
+                    color: themed('primary');
+                }
+            }
+        }
+    }
+}
+
+.slick-dots {
+    bottom: 0;
+
+    li {
+        height: 18px;
+        margin: 0 8px;
+
+        button {
+            height: 18px;
+            padding: 0;
+
+            &:before {
+                font-size: 14px;
+                height: 18px;
+                line-height: 20px;
+                transition: $transition-default;
+
+                @include themify {
+                    color: themed('primary');
+                }
+            }
+        }
+
+        &.slick-active {
+            button {
+                &:before {
+                    font-size: 20px;
+                    line-height: 20px;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.arrow-prev.slick-arrow,
+.arrow-next.slick-arrow {
+    position: absolute;
+    font-size: 14px;
+    padding: 4px 0;
+    color: $color-gray-dark;
+    z-index: 1;
+    cursor: pointer;
+    transition: none;
+
+    &:hover {
+        font-weight: 500;
+
+        @include themify {
+            color: themed('primary');
+        }
+    }
+}
+
+.arrow-prev {
+    right: 69px;
+}
+
+.arrow-next {
+    right: -3px;
+}

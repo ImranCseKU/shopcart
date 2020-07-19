@@ -1,0 +1,126 @@
+.btn {
+    font-family: $primary-font;
+    font-size: 15px;
+    line-height: 26px;
+    position: relative;
+    border: none;
+    padding: 7px 24px;
+    border-radius: $radius-default;
+    transition: $transition-default;
+
+    &:focus {
+        box-shadow: none !important;
+        outline: 0;
+    }
+}
+
+.btn-lg {
+    margin-top: 5px;
+    padding: 12px 50px;
+}
+
+.btn-primary {
+    font-weight: 500;
+    color: $color-white;
+
+    @include themify {
+        background: themed('primary');
+    }
+
+    &:active,
+    &:hover,
+    &:active:focus {
+        @include themify {
+            background: themed('primary-hover');
+        }
+    }
+
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active {
+        @include themify {
+            background: themed('primary-hover');
+        }
+    }
+
+    &.disabled,
+    &[disabled] {
+        &:active,
+        &:hover,
+        &:focus,
+        &:hover:focus {
+            @include themify {
+                background: themed('primary');
+            }
+        }
+    }
+}
+
+.btn-default {
+    font-weight: 500;
+    padding: 6px 24px;
+    background: transparent;
+
+    @include themify {
+        border: 1px solid themed('primary');
+    }
+
+    &:active,
+    &:hover,
+    &:active:focus {
+        color: $color-white;
+
+        @include themify {
+            background: themed('primary');
+        }
+    }
+
+    &.disabled,
+    &[disabled] {
+        &:active,
+        &:hover,
+        &:focus,
+        &:hover:focus {
+            color: $color-black;
+            background: transparent !important;
+
+            &.btn-loading {
+                &:after {
+                    @include themify {
+                        border-color: themed('primary');
+                    }
+                }
+            }
+        }
+    }
+
+    &.btn-loading {
+        &:after {
+            @include themify {
+                border-color: themed('primary');
+            }
+        }
+
+        &:active,
+        &:hover,
+        &:focus,
+        &:hover:focus {
+            &:after {
+                border-color: $color-white;
+            }
+        }
+    }
+}
+
+.btn-remove {
+    font-size: 15px;
+    color: $color-black;
+    background: transparent;
+    border: none;
+    transition: $transition-default;
+
+    &:hover {
+        @include themify {
+            color: themed('primary');
+        }
+    }
+}

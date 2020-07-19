@@ -1,0 +1,12 @@
+{
+    "name": "Setting",
+    "alias": "setting",
+    "description": "Module for handling all site settings.",
+    "order": 10,
+    "providers": [
+        "Modules\\Setting\\Providers\\SettingServiceProvider"
+    ],
+    "files": [
+        "helpers.php"
+    ]
+}

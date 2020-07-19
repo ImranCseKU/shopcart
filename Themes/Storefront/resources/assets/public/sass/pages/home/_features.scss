@@ -1,0 +1,111 @@
+.features-wrap {
+    margin-top: 50px;
+
+    .features {
+        padding-bottom: 30px;
+        border: 1px solid $border-color;
+        border-radius: $radius-default;
+    }
+}
+
+.features-wrap {
+    .feature-list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .single-feature {
+        position: relative;
+        flex: 0 0 20%;
+        max-width: 20%;
+        margin-top: 30px;
+        padding: 0 15px;
+
+        &:last-child {
+            &:after {
+                width: 0;
+            }
+        }
+
+        &:after {
+            position: absolute;
+            content: '';
+            top: 0;
+            right: 0;
+            height: 42px;
+            width: 1px;
+            background: $color-gray-lite;
+        }
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .features-wrap {
+        .single-feature {
+            flex: 0 0 25%;
+            max-width: 25%;
+
+            &:nth-child(4) {
+                &:after {
+                    width: 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .features-wrap {
+        .single-feature {
+            flex: 0 0 33.33333333333333%;
+            max-width: 33.33333333333333%;
+
+            &:nth-child(3) {
+                &:after {
+                    width: 0;
+                }
+            }
+
+            &:nth-child(4) {
+                &:after {
+                    width: 1px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .features-wrap {
+        .single-feature {
+            flex: 0 0 50%;
+            max-width: 50%;
+
+            &:nth-child(2),
+            &:nth-child(4) {
+                &:after {
+                    width: 0;
+                }
+            }
+
+            &:nth-child(3) {
+                &:after {
+                    width: 1px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .features-wrap {
+        .single-feature {
+            flex: 0 0 100%;
+            max-width: 100%;
+
+            &:after {
+                content: none;
+            }
+        }
+    }
+}

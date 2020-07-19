@@ -1,0 +1,48 @@
+.landscape-products-wrap {
+	margin: 45px 0 -50px;
+
+	.products-header {
+		border-bottom: 1px solid $border-color-lite;
+	}
+
+    .section-title {
+        padding-bottom: 14px;
+    }
+}
+
+.landscape-products {
+	.arrow-prev.slick-arrow,
+    .arrow-next.slick-arrow {
+        top: -40px;
+    }
+
+	.slick-list {
+        margin: 0 -15px;
+        padding: 30px 0 50px;
+
+        .slick-track {
+            display: flex;
+            align-items: stretch;
+        }
+    }
+}
+
+@media screen and (max-width: $lg) {
+    .landscape-products {
+        .slick-list {
+            margin: 0 -8px;
+        }
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .landscape-products-wrap {
+        margin-bottom: 0;
+    }
+
+	.landscape-products {
+		.slick-list {
+			padding-bottom: 48px;
+		}
+	}
+}
